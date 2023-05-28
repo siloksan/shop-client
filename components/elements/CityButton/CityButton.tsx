@@ -1,4 +1,4 @@
-import LocationSwg from "@/components/elements/LocationSvg/LocationSwg"
+import LocationSwg from "@/components/elements/svg/LocationSvg/LocationSwg"
 import styles from '@/styles/cityButton/index.module.scss'
 
 const CityButton = () => {

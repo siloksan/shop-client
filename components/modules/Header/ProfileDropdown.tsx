@@ -1,8 +1,8 @@
 import { forwardRef } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { IWrappedComponentProps } from "@/types/common"
-import ProfileSvg from "@/components/elements/ProfileSvg/ProfileSvg"
-import LogoutSvg from "@/components/elements/LogoutSvg/Logout"
+import ProfileSvg from "@/components/elements/svg/ProfileSvg/ProfileSvg"
+import LogoutSvg from "@/components/elements/svg/LogoutSvg/Logout"
 import { withClickOutside } from "@/utils/withClickOutside"
 import styles from "@/styles/profileDropDown/index.module.scss"
 
