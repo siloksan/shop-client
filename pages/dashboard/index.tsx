@@ -1,5 +1,6 @@
 import Head from "next/head"
-import Layout from "@/layout/Layout"
+import Layout from "@/components/layout/Layout"
+import DashboardPage from "@/components/templates/DashboardPage/DashboardPage"
 
 function Dashboard() {
   return (
@@ -14,9 +15,9 @@ function Dashboard() {
       </Head>
       <Layout>
         <main>
+          <DashboardPage />
           <div className="overlay"/>
         </main>
-        <h1>Dashboard</h1>
       </Layout>
     </>
   )
