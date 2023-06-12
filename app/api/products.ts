@@ -6,3 +6,9 @@ export const getBestsellersOrNewProductsFx = createEffect(async (url: string) =>
 
   return data
 })
+
+export const getProductsFx = createEffect(async (url: string) => {
+  const { data } = await api.get(url)
+
+  return data
+})

@@ -1,0 +1,79 @@
+.filter {
+  &__price {
+    width: 300px;
+
+    &__inputs {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    &__input {
+      pointer-events: none;
+      width: 135px;
+      height: 40px;
+      padding-left: 12px;
+      background-color: transparent;
+      border: 1px solid #D5D5D5;
+      border-radius: 4px;
+      font-weight: 400;
+      font-size: 14px;
+      color: #9E9E9E;
+
+      @media (max-width: 820px) {
+        width: 120px;
+      }
+    }
+
+    &__border {
+      width: 13px;
+      height: 1px;
+      background-color: #4E4C4C;
+    }
+  }
+
+  &__actions {
+    padding-top: 36px;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 820px) {
+      padding-top: 24px;
+      border-top: 1px solid #E1E1E1;
+    }
+
+    button {
+      padding: 8px;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    &__show {
+      position: relative;
+      height: 40px;
+      background-color: #1C629E;
+      border-radius: 4px;
+      margin: 0 0 24px;
+      color: #FAFBFC;
+
+      &:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+
+    &__reset {
+      color: #1C629E;
+      background-color: #EBF5FD;
+      border: 1px solid #1C629E;
+      border-radius: 4px;
+
+      &:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+  }
+}

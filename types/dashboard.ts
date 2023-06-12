@@ -5,3 +5,8 @@ export interface IDashboardSlider {
   spinner: boolean
   goToProductPage?: boolean
 }
+
+export interface ICartAlertProps {
+  count: number
+  closeAlert: VoidFunction
+}

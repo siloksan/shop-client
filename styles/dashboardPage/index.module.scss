@@ -108,4 +108,116 @@
       }
     }
   }
+
+  &__alert {
+    position: relative;
+    background-color: #FFF;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    margin-bottom: 48px;
+    padding: 16px 55px 16px 16px;
+
+    @media (max-width: 510px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+    }
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+
+      @media (max-width: 510px) {
+        margin-bottom: 16px;
+        align-items: center;
+      }
+
+      span {
+       color: #2D2D2D;
+      }
+
+      &:first-child {
+        margin-bottom: 5px;
+      }
+    }
+
+    &__right {
+      @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @media (max-width: 510px) {
+        width: 100%;
+      }
+    }
+
+    &__btn__cart, &__btn__order {
+      text-align: center;
+      font-size: 18px;
+      padding: 8px 40px;
+      border-radius: 4px;
+
+      @media (max-width: 768px) {
+        margin-right: 0;
+        margin-bottom: 16px;
+      }
+    }
+
+    &__btn {
+
+      &__cart {
+        margin-right: 24px;
+        background-color: #EBF5FD;
+        border: 1px solid #1C629E;
+        color: #1C629E;
+
+        @media (max-width: 768px) {
+          margin-right: 0;
+          margin-bottom: 16px;
+        }
+      }
+
+      &__order {
+        background-color: #1C629E;
+        color: #f2f2f2;
+      }
+
+      &__close {
+        cursor: pointer;
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        right: 15px;
+        top: 5px;
+
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 2px;
+          height: 18px;
+          border-radius: 3px;
+          background-color: #1C629E;
+        }
+
+        &::before {
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
 }

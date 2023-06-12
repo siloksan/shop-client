@@ -1,15 +1,16 @@
 import Head from "next/head"
 import Layout from "@/components/layout/Layout"
-import DashboardPage from "@/components/templates/DashboardPage/DashboardPage"
 import useRedirectByUserCheck from "@/hooks/useRedirectByUserCheck"
+import CatalogPage from "@/components/templates/CatalogPage/CatalogPage"
+import { IQueryParams } from "@/types/catalog"
 
-function Dashboard() {
+function Catalog({ query }: { query: IQueryParams }) {
   const { shouldLoadContent } = useRedirectByUserCheck()
 
   return (
     <>
       <Head>
-        <title>Nasty_Ku_toys | {shouldLoadContent ? 'Главная' : ''}</title>
+        <title>Nasty_Ku_toys | {shouldLoadContent ? 'Каталог' : ''}</title>
         <meta name="description" content="Online shop knitting toys" />
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE-edge" />
@@ -19,7 +20,7 @@ function Dashboard() {
       {shouldLoadContent && (
         <Layout>
           <main>
-            <DashboardPage />
+            <CatalogPage query={query}/>
             <div className="overlay"/>
           </main>
         </Layout>
@@ -28,4 +29,10 @@ function Dashboard() {
   )
 }
 
-export default Dashboard
+export async function getServerSideProps(context: { query: IQueryParams }) {
+  return {
+    props: { query: { ...context.query }}
+  }
+}
+
+export default Catalog

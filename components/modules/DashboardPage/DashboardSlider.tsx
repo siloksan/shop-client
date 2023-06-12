@@ -3,16 +3,15 @@ import { useMediaQuery } from "@/hooks/useMediaQuery"
 import Link from "next/link"
 import { formatPrice } from "@/utils/common"
 import { useEffect } from "react"
+import { IDashboardSlider } from "@/types/dashboard"
+import 'slick-carousel/slick/slick.css'
 import skeletonStyles from "@/styles/skeleton/index.module.scss"
 import styles from "@/styles/dashboardPage/index.module.scss"
-import 'slick-carousel/slick/slick.css'
-// import 'slick-carousel/slick/slick-theme.css'
 
-const DashboardSlider = ({ items, spinner, goToProductPage }) => {
+const DashboardSlider = ({ items, spinner, goToProductPage }: IDashboardSlider) => {
   const isMedia560 = useMediaQuery(560)
   const isMedia768 = useMediaQuery(768)
   const isMedia800 = useMediaQuery(800)
-  const isMedia1030 = useMediaQuery(1030)
   const isMedia1366 = useMediaQuery(1366)
 
   useEffect(() => {
@@ -55,7 +54,7 @@ const DashboardSlider = ({ items, spinner, goToProductPage }) => {
       ) : items.length ? (
         items.map((item) => (
           <div className={styles.dashboard__slide}
-               key={item}
+               key={item.id}
                style={width}
           >
             <img src={JSON.parse(item.images)[0]} alt={item.name} />
